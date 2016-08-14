@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Fizz Quiz App</title>
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="themes/bootstrap/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="themes/bootstrap/css/fontawesome/font-awesome.min.css">
+
+		<link rel="stylesheet" href="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		<link rel="stylesheet" href="./_assets/css/jqm-demos.css">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+		<script src="themes/jquery-mobile-1.4.5/jquery.js"></script>
+         <script src="themes/bootstrap/js/plugins/bootstrap/bootstrap.min.js"></script>
+		<script src="./_assets/js/index.js"></script>
+		<script src="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript">
+			//*******CHANGE THIS*********index--
+			//  var domain = 'http://104.238.96.209/~newsimtms/test/qu/afizzquizapp';
+			var domain =  'http://104.238.96.209/~newsimtms/test/FizzServer';
+			/*var domain ='http://www.legalfish.com/beta/app/afizzquizapp';
+			var domain ='http://localhost/afizzquizapp3'; */
+			//*******CHANGE THIS*********
+
+
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+			function onDeviceReady() {
+
+			    var username = window.localStorage.getItem("username");
+			var password = window.localStorage.getItem("password");
+			if(username != null && password != null)
+			{
+			if(username != false && password != false)
+			{
+			if(username != "" && password != "")
+			{
+				window.location = "main.html";
+			}
+			}
+			}
+			}
+
+
+
+
+		</script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/users.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="index" class="jqm-demos jqm-index">
+			<div data-role="header" class="jqm-header">
+				<h2><img src="img/logo.png" alt="Fizz Quiz" width="256" height="256" style="height:256px !important; width:256px !important;"></h2>
+				<a href="#popupMenu" style="display:none;" data-rel="popup" data-transition="slideup" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left"></a>
+				<div data-role="popup" id="popupMenu" data-theme="b">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;">
+						<li data-role="list-divider">
+							<div id="message" style="text-transform:capitalize !important;"></div>
+						</li>
+						<li style="display:none;"><a href="#" data-role="button" data-inline="true" onclick="logout();">Log Out</a></li>
+						<li><a href="#">Edit</a></li>
+						<li><a href="#">Disable</a></li>
+						<li><a href="#">Delete</a></li>
+					</ul>
+				</div>
+				<!--
+					<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>-->
+			</div>
+			<!-- /header -->
+			<div data-role="content">
+			<div id="message"></div>
+            <div class="buttonHolder">
+				<button type="button" name="goLogin" id="goLogin" onclick="gotoLogin();" class="btn btn-coke" >Login / Connexion</button>
+
+				<br />
+				<center>
+					Don't have an account yet? <br />
+                    <button type="button" class="btn btn-coke btn-block" rel="external" data-transition="slideup" name="gotoSignup" id="gotoSignup" onclick="gotoSignup();">Sign up / S'inscrire</button>
+					<!--<a class="btn btn-coke" href="reg.html" rel="external" data-transition="slideup">REGISTER</a>--> <br /> <a href="forgot.html" rel="external" style="color:#8d8d8d !important; font-size:12px;">Forgot my password</a>
+				</center>
+
+                </div>
+			</div>
+		</div>
+		<div id="footer" data-role="footer" data-id="foo1" data-position="fixed">
+
+
+		</div>
+		<!-- /footer -->
+
+
+		<script>
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+<input type='hidden' id='user_login'>
+<div id='header'></div>
+
+
+
+<a href='index.html' id='login_link'>Please login again</a>
+
+
+
+<script>  
+$( document ).ready(function() {
+
+var user_login = $('#user_login').val();
+
+<!--  GET HEADER -->
+ 
+$.get( "http://localhost:9090/mobileadmin/header_content")
+  .done(function( data ) {
+	$('#header').html(data);
+});
+
+
+<!--  GET FOOTER -->
+ 
+$.get( "http://localhost:9090/mobileadmin/footer_content")
+  .done(function( data ) {
+	$('#footer').html(data);
+});	
+
+
+
+$.post( "http://localhost:9090/mobileadmin/error_login", { loginP: 'login_link' })
+  .done(function( data ) {
+	$('#login_link').text(data);
+}); 
+	
+	
+});
+</script>

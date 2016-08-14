@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Fizz Quiz App</title>
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="themes/bootstrap/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="themes/bootstrap/css/fontawesome/font-awesome.min.css">
+        
+		<link rel="stylesheet" href="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		
+		<script src="themes/jquery-mobile-1.4.5/jquery.js"></script>
+         <script src="themes/bootstrap/js/plugins/bootstrap/bootstrap.min.js"></script>
+		<script src="../_assets/js/index.js"></script>
+		<script src="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script type="text/javascript">
+    //*******CHANGE THIS*********
+  //  var domain = 'http://104.238.96.209/~newsimtms/test/qu/afizzquizapp';
+  //var domain =  'http://maong.local/afizzquizapp';
+  /*var domain ='http://www.legalfish.com/beta/app/afizzquizapp';*/ var domain ='http://localhost/afizzquizapp3';
+
+    //*******CHANGE THIS*********
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+
+    }
+	
+		</script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/users.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="page" class="jqm-demos jqm-home">
+			<div data-role="header" class="jqm-header">
+			<h2><img src="img/logo2.png" alt="Fizz Quiz" height="40"></h2>
+   
+		 <a href="index.html" data-rel="external" data-transition="slideup" class="fa-icon"><i class="fa fa-chevron-left"></i></a>
+	</div>
+	<div data-role="content">
+
+<input type="text" name="test" id="username" onkeyup="check()" placeholder="Username" /><span id="result"></span><br />
+<input type="text" name="test" id="email"  placeholder="Email" /><br />
+<input type="password" name="test" id="password"  placeholder="Password" /><span id="passw"></span><br />
+<input type="password" name="test" id="password2" placeholder="Password Again" /><br />
+<br />
+<button type="button" class="btn btn-coke" name="register" id="register"  onclick="signup();">Sign up</button>
+<div id="message"></div>
+	</div>
+
+</div>
+
+
+</body>
+</html>

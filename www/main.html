@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Fizz Quiz App</title>
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="themes/bootstrap/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="themes/bootstrap/css/fontawesome/font-awesome.css">
+
+		<link rel="stylesheet" href="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" href="./_assets/css/jqm-demos.css">
+
+		<script src="themes/jquery-mobile-1.4.5/jquery.js"></script>
+         <script src="themes/bootstrap/js/plugins/bootstrap/bootstrap.min.js"></script>
+
+		<script src="./_assets/js/index.js"></script>
+		<script src="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript">
+			//*******CHANGE THIS*********-----
+			//	var domain = 'http://104.238.96.209/~newsimtms/test/qu/afizzquizapp';
+			var domain =  'http://104.238.96.209/~newsimtms/test/FizzServer';
+			/*var domain ='http://www.legalfish.com/beta/app/afizzquizapp';*/
+			//var domain ='http://localhost/afizzquizapp3';
+			//*******CHANGE THIS*********
+
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+			function onDeviceReady() {
+			var username = window.localStorage.getItem("username");
+			var password = window.localStorage.getItem("password");
+			if(username!='undefined')
+			{
+			document.getElementById('userbox').innerHTML = "Hi "+username+"!";
+			}
+			else{
+
+			document.getElementById('message').innerHTML = "It didn't work!";
+
+			}
+			}
+
+			var userBox = $('#userbox').innerHTML;
+			if(userBox =='') {
+				window.location('index.html');
+			}
+		</script>
+		<script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="js/userdata.js"></script>
+        <!--  <script type="text/javascript" src="js/json2html.js"></script>-->
+
+
+
+	</head>
+	<body>
+		<div data-role="page" id="home" class="jqm-demos jqm-home">
+			<div data-role="header" class="jqm-header">
+				<h2><img src="img/logo2.png" alt="Fizz Quiz" height="40"></h2>
+				<!--<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left"></a>-->
+                <a href="#popupMenu" data-rel="popup" data-transition="slideup" class="fa-icon"><i class="fa fa-bars"></i></a>
+				<div data-role="popup" id="popupMenu" data-theme="b">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;">
+						<li data-role="list-divider">
+							<div id="userbox" class="truncate" style="text-transform:capitalize !important;"></div>
+                            <div id="user_photo"><img src="img/user_default.png"></div>
+						</li>
+                        <li><a data-rel="external" id="profileBtn" data-transition="slideup" href="#" onClick="gotoProfile();">Profile</a></li>
+						<li><a href="#">Play</a></li>
+                        <li>
+                        <a data-rel="external" data-transition="slideup" href="leaderboards.html">Leaderboards</a></li>
+						<li><a data-rel="external" data-transition="slideup" href="about.html">About</a></li></li>
+						<li><a href="#" onclick="logout();">Log Out</a></li>
+
+					</ul>
+				</div>
+				<!--<a href="#"><i class="fa fa-bars"></i></a>-->
+			</div>
+			<!-- /header -->
+			<div data-role="content">
+				<div id="message"></div>
+
+                <a class="ui-btn ui-icon-carat-r ui-btn-icon-right btn-coke" data-rel="external" data-transition="slideup" href="play.html">Play</a>
+                 <!-- <a class="ui-btn ui-icon-user ui-btn-icon-right btn-coke" data-rel="external" data-transition="slideup" href="user.html">Profile</a>
+                  -->
+                  <a data-rel="internal" class="ui-btn ui-icon-user ui-btn-icon-right btn-coke"  id="profileBtn" data-transition="slideup" href="#">Profile</a>
+
+                    <a class="ui-btn ui-icon-bullets ui-btn-icon-right btn-coke" data-rel="external" data-transition="slideup" href="leaderboards.html">Leaderboards</a>
+                      <a class="ui-btn ui-icon-info ui-btn-icon-right btn-coke" data-rel="external" data-transition="slideup" href="#">Overview and Incentives</a>
+
+			</div>
+            <div id="user-profile" style="display:none;">Test</div>
+				<!--<div id="footer" data-role="footer" data-id="foo1" data-position="fixed">
+			<div data-role="navbar">
+					<ul>
+						<li><a href="main.html" class="ui-btn-active ui-state-persist" data-prefetch>Home</a></li>
+						<li><a href="#" data-prefetch>Quiz</a></li>
+						<li><a href="#" data-prefetch>Albums</a></li>
+						<li><a href="user.html" data-prefetch>User</a></li>
+					</ul>
+				</div>-->
+				<!-- /navbar -->
+			<!--</div>
+			 /footer -->
+		</div>
+	</body>
+</html>

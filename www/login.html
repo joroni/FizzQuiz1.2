@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Fizz Quiz App</title>
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="themes/bootstrap/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="themes/bootstrap/css/fontawesome/font-awesome.min.css">
+
+		<link rel="stylesheet" href="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		<link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+
+		<script src="themes/jquery-mobile-1.4.5/jquery.js"></script>
+         <script src="themes/bootstrap/js/plugins/bootstrap/bootstrap.min.js"></script>
+		<script src="../_assets/js/index.js"></script>
+		<script src="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript">
+			//*******CHANGE THIS*********login --
+			//  var domain = 'http://104.238.96.209/~newsimtms/test/qu/afizzquizapp';
+			var domain =  'http://104.238.96.209/~newsimtms/test/FizzServer';
+			/*var domain ='http://www.legalfish.com/beta/app/afizzquizapp';
+			var domain ='http://localhost/afizzquizapp3'; */
+			//*******CHANGE THIS*********
+
+
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+			function onDeviceReady() {
+
+			    var username = window.localStorage.getItem("username");
+			var password = window.localStorage.getItem("password");
+			if(username != null && password != null)
+			{
+			if(username != false && password != false)
+			{
+			if(username != "" && password != "")
+			{
+				window.location = "main.html";
+			}
+			}
+			}
+			}
+
+
+
+
+		</script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+	</head>
+	<body>
+		<div data-role="page" id="login" class="jqm-demos jqm-login">
+			<div data-role="header" class="jqm-header">
+				<h2><img src="img/logo.png" alt="Fizz Quiz" style="height:256px !important; width:256px !important;"></h2>
+				 <a href="index.html" data-rel="external" data-transition="slideup" class="fa-icon"><i class="fa fa-chevron-left"></i></a>
+
+
+				<!--
+					<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>-->
+			</div>
+			<!-- /header -->
+			<div data-role="content">
+				<input type="text" name="test" id="username" placeholder="Username" /><br />
+				<input type="password" name="test" id="password"  placeholder="Password" />
+				<br />
+				<button type="button" name="login" id="login" onclick="login();" class="btn btn-coke" >Login</button>
+				<div id="message"></div>
+				<br />
+				<!--<center>
+					Don't have an account yet? <br />
+					<a href="reg.html" rel="external" data-transition="slideup">REGISTER</a> <br> <br> <a href="forgot.html" rel="external" style="color:#8d8d8d !important; font-size:12px;">Forgot my password</a>
+				</center> -->
+				<br />
+			</div>
+		</div>
+		<div id="footer" data-role="footer" data-id="foo1" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="footer-persist-a.html">Friends</a></li>
+					<li><a href="footer-persist-b.html" class="ui-btn-active ui-state-persist">Albums</a></li>
+					<li><a href="footer-persist-c.html">Emails</a></li>
+				</ul>
+			</div>
+			<!-- /navbar -->
+		</div>
+		<!-- /footer -->
+	</body>
+</html>

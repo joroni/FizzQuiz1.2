@@ -1,4 +1,10 @@
- function check() {
+
+jQuery.support.cors = true;
+jQuery.mobile.allowCrossDomainPages = true;
+
+
+
+function check() {
 
      var un = document.getElementById('username').value;
      var action = 'check';
@@ -13,11 +19,8 @@
 
  function login() {
 
-
      var un = document.getElementById('username').value;
      var pw = document.getElementById('password').value;
-     //var fn = document.getElementById('name').value;
-     //var em = document.getElementById('email').value;
 
      //The action
      var action = 'login';
@@ -26,16 +29,12 @@
 
          if (res.status == 'logged-in') {
              document.addEventListener('deviceready', onDeviceReady, false);
-
              window.localStorage.setItem('username', un);
              window.localStorage.setItem('password', pw);
              window.location = 'main.html';
          } else {
              document.getElementById('message').innerHTML = '<b>' + res.status + '</b>';
-
          }
-
-
      });
  }
 
@@ -46,56 +45,16 @@
      //The action
      var action = 'forgot';
 
-     $.getJSON(domain + '/json_backend.php?callback=?', '&em=' + em + '&action=' + action, function(res) {
+     $.getJSON(domain + '/json_backend.php?callback=?', 'em=' + em + '&action=' + action, function(res) {
 
          document.write('<b>' + res.status + '</b><br>');
 
      });
  }
 
- function gotoLogin() {
-     window.location = 'login.html';
- }
-
- function gotoSignup() {
-     window.location = 'reg.html';
- }
-
-
- function gotoProfile() {
-     //window.location = 'user.html';
-     window.location = '#';
-     $('#user-profile').show();
-     // var id = document.getElementById('id').value;
-     var id = 1;
-     //The action
-     var action = 'user_data';
-
-     $.getJSON(domain + '/user_data.php?type=?', 'action=' + action + '&id=' + id, function(res) {
-
-         if (res.status == 'logged-in') {
-             document.addEventListener('deviceready', onDeviceReady, false);
-
-             window.localStorage.setItem('id', id);
-
-             //  window.location = 'main.html';
-         } else {
-             document.getElementById('message').innerHTML = '<b>' + res.status + '</b>';
-
-         }
-
-
-     });
-
-
-
-
- }
-
-
-
  function signup() {
      var un = document.getElementById('username').value;
+
      var em = document.getElementById('email').value;
      var pw = document.getElementById('password').value;
      var pw2 = document.getElementById('password2').value;
@@ -134,16 +93,15 @@
              document.getElementById('message').innerHTML = '';
              document.getElementById('result').innerHTML = '';
          }
+
      }
 
 
  }
 
  function logout() {
-     document.addEventListener('deviceready', logOutReady, false);
-     /* added by raymund */
+     // document.addEventListener('deviceready', logOutReady, false);
      logOutReady();
-
  }
 
  function logOutReady() {

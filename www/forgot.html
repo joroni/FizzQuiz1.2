@@ -1,55 +1,45 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-	<head>
-		<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Fizz Quiz App</title>
-		<link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="themes/bootstrap/css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="themes/bootstrap/css/fontawesome/font-awesome.min.css">
-        
-		<link rel="stylesheet" href="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.css">
-		<link rel="stylesheet" href="../_assets/css/jqm-demos.css">
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-		<script src="themes/jquery-mobile-1.4.5/jquery.js"></script>
-         <script src="themes/bootstrap/js/plugins/bootstrap/bootstrap.min.js"></script>
-		<script src="../_assets/js/index.js"></script>
-		<script src="themes/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile Web App</title>
+    <link href="css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
     //*******CHANGE THIS*********
-	//	var domain = 'https://104.238.96.209/~newsimtms/test/qu/afizzquizapp';
-	//var domain =  'http://maong.local/afizzquizapp';
-  var domain =  'http://104.238.96.209/~newsimtms/test/FizzServer';
+    var domain ="http://104.238.96.209/~project/fizzqz/ServerSide2";
     //*******CHANGE THIS*********
-
+	
     document.addEventListener("deviceready", onDeviceReady, false);
 
     function onDeviceReady() {
-
+        
     }
 	
-		</script>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/users.js"></script>
-	</head>
-	<body>
-		<div data-role="page" id="page" class="jqm-demos jqm-home">
-			<div data-role="header" class="jqm-header">
-				<h2><img src="img/logo2.png" alt="Fizz Quiz" style="height:124px !important; width:128px !important;"></h2>
-    <a href="index.html" rel="external" data-transition="slideup" class="fa-icon"><i class="fa fa-chevron-left"></i></a>
-		<h1>Forgot Password</h1>
+</script>
+<script type="text/javascript" src=js/main.js></script>
+</head> 
+<body> 
+
+<div data-role="page" id="recovery">
+	<div data-role="header" data-theme="a">
+    <a href="index.html" data-role="button" data-icon="back" rel="external">Back</a>
+        <div id="topbanner"></div>
+			<h1>Forgot Password</h1>
 	</div>
-	<div data-role="content">
+	<div data-role="content">	
 <p>Enter your email below to retrive your login information</p>
 
 <input type="text" name="test" id="email" placeholder="email@domain.com" />
 <br />
-<button type="button" name="register" class="btn btn-coke" id="register"  onclick="forgot()" >Send</button>
+<input type="submit" name="register" id="register" value="Login" onclick="forgot()" />
 <div id="message"></div>
 	</div>
-
+	
 </div>
 
 

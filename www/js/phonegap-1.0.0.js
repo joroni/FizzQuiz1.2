@@ -1259,7 +1259,7 @@ Camera.prototype.getPicture = function(successCallback, errorCallback, options) 
     if (typeof options.targetWidth == "number") {
         targetWidth = options.targetWidth;
     } else if (typeof options.targetWidth == "string") {
-        var width = new Number(options.targetWidth);
+        var width = Number(options.targetWidth);
         if (isNaN(width) === false) {
             targetWidth = width.valueOf();
         }
@@ -1269,7 +1269,7 @@ Camera.prototype.getPicture = function(successCallback, errorCallback, options) 
     if (typeof options.targetHeight == "number") {
         targetHeight = options.targetHeight;
     } else if (typeof options.targetHeight == "string") {
-        var height = new Number(options.targetHeight);
+        var height = Number(options.targetHeight);
         if (isNaN(height) === false) {
             targetHeight = height.valueOf();
         }
@@ -3711,7 +3711,7 @@ Connection.prototype.getInfo = function(successCallback, errorCallback) {
 
 PhoneGap.addConstructor(function() {
     if (typeof navigator.network === "undefined") {
-        navigator.network = new Object();
+        navigator.network = {};
     }
     if (typeof navigator.network.connection === "undefined") {
         navigator.network.connection = new Connection();
@@ -4323,7 +4323,7 @@ var CupcakeLocalStorage = function() {
 
 		} catch(e) {
 			alert("Database error "+e+".");
-		    return;
+
 		}
 };
 
@@ -4331,7 +4331,7 @@ PhoneGap.addConstructor(function() {
     var setupDroidDB = function() {
         navigator.openDatabase = window.openDatabase = DroidDB_openDatabase;
         window.droiddb = new DroidDB();
-    }
+    };
     if (typeof window.openDatabase === "undefined") {
         setupDroidDB();
     } else {

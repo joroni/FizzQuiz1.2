@@ -1,0 +1,10 @@
+#topbanner {
+    height: 20px;
+    position: relative;
+}
+
+.ui-header .ui-btn-left {
+    left: 10px;
+    position: absolute;
+    top: 1.5em !important;
+}
